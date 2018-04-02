@@ -1,0 +1,10 @@
+<h1>Foodtypes</h1>
+<ul>
+  <li><%= @foodtype.shortname %></li>
+  <li><%= @foodtype.title %></li>
+</ul>
+
+<div class = "controls">
+  <%= link_to 'Edit Food Type', edit_foodtype_path(@foodtype) %>
+  <%= link_to 'Delete Food Type', @foodtype, :method =>'delete', :data => {:confirm => 'Are you sure?'} %>
+</div>

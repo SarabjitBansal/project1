@@ -1,0 +1,6 @@
+<h1>Pages#home</h1>
+<% if @current_user.present? %>
+ <!-- session[:user_id] -->
+  Welcome back <%= @current_user.email %>
+  <!-- User.find(session[:user_id]) -->
+<% end %>

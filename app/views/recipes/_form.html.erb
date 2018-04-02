@@ -1,0 +1,39 @@
+<div class ="alignn">
+  <%= form_for @recipe do |f|  %>
+  <%= f.label :'Recipe Name' %>
+  <%= f.text_field :name, :placeholder => 'Acai Bowl Recipe', class: "foodname" %>
+  <%= f.label :"Recipe Description"  %>
+  <%= f.text_area :food_desc ,class: "fooddesc", :placeholder => 'Acai is one of the best known sources of antioxidants. Antioxidants are plant-based chemicals which are great for overall health and fighting free radicals within the body.' %>
+  <div class = "alignn2">
+    <%= f.label :prep_time %>
+    <%= f.text_field :prep_time, class:"preptime", :placeholder => '10 mins' %>
+    <%= f.label :cook_time %>
+    <%= f.text_field :cook_time, class:"cooktime" , :placeholder => '20 mins' %>
+    <%= f.label :no_of_serves %>
+    <%= f.text_field :no_of_serves, class:"noofserves" , :placeholder => '2 Serves' %>
+  </div>
+  <div class="foodty">
+    <%= f.label :recipe_type %>
+    <%= f.text_field :recipe_type %>
+    <%= f.label :foodtype_id %>
+    <%= f.select :foodtype_id, Foodtype.pluck(:title, :id), :include_blank => true %>
+  </div>
+
+  <%= f.label :ingredients %>
+  <%= f.text_area :ingredients,class: "ingredients" , :placeholder => '4 tbs acai powder,1 cup frozen raspberries' %>
+  <%= f.label :procedure %>
+  <%= f.text_area :procedure ,class: "procedure" , :placeholder => 'Blend the acai powder, frozen berries, milk, spinach leaves and honey together' %>
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+
+  <div class = "origin">
+    <%= f.label :country %>
+    <%= f.text_field :country %>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+    <%= f.submit 'Create Recipe', :class => 'btnsubmit' %>
+  <% end %>
+
+</div>

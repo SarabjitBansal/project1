@@ -1,0 +1,285 @@
+@import "font-awesome.css";
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.alignc{
+  font-family: 'Quicksand', sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+
+}
+
+.alignc img {
+    padding: 5px;
+}
+
+.thumb {
+  padding:50px;
+
+}
+
+.feature {
+
+max-width: 100%;
+}
+
+
+.alignn{
+
+  max-width: 700px;
+  margin: 0 auto;
+  display: block;
+  border: 2px solid black;
+  padding: 2rem;
+}
+
+label {
+  display:block;
+  padding:1rem 0 .5rem;
+
+}
+input, textarea, select {
+    width:100%;
+    height:1.5rem;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12px;
+}
+.fooddesc {
+  width: 100%;
+  height:5rem;
+}
+.alignn2 label {
+  width:auto;
+  display: inline-block;
+  padding-left: 1rem;
+}
+.alignn2 input {
+  width: 3rem;
+
+}
+.foodty label {
+  width:auto;
+  display: inline-block;
+  padding-left: 1rem;
+}
+.foodty input, select {
+
+  width: 6rem;
+
+}
+.origin label {
+  width:auto;
+  display: inline-block;
+  /* padding-left: 1rem; */
+}
+.origin input {
+  width: 10rem;
+
+}
+.origin {
+  padding: 1rem 0 1rem 0;
+}
+.alignn2 {
+  display: inline-block;
+  padding-top: 1rem ;
+}
+
+.ingredients{
+height:5rem;
+}
+
+.procedure {
+  height:5rem;
+}
+header {
+  display:inline;
+}
+header img{
+  max-height: 10em;
+  display:inline-block;
+}
+
+.headtag {
+  text-align: right;
+  /* display:inline-block; */
+}
+
+.btnsubmit{
+
+  width: auto;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.alignc2 {
+  display: inline-block;
+  /* width:100%; */
+}
+main {
+  display: inline-block;
+  width: 55%;
+  align:left;
+
+}
+
+
+aside {
+  display: inline-block;
+  width: 40%;
+  vertical-align: top;
+  border-radius: 10px;
+  border: 0.5px solid grey;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  /* padding: 20px; */
+
+}
+.asideTop{
+display: inline-block;
+}
+
+.asideBottom{
+  padding-left:30px;
+  display: inline-block;
+}
+
+.tooltip  {
+  border: 1px solid green;
+  border-radius: 4px;
+  background-color: green;
+  display: inline-block;
+  color: white;
+  padding: 5px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: white;
+    color: black;
+    border: 1px solid green;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+nav {
+  /* background-color: rgba(255, 232, 28, 0.8); */
+  font-size: 22px;
+  padding: 10px;
+}
+.navmenu {
+  color: grey;
+  padding:20px;
+  text-decoration: none;
+}
+
+nav .navmenu {
+  position:relative;
+  z-index: 1;
+}
+.navmenu:hover {
+  color: #91640F;
+  /* rgba(255, 232, 28, 0.8); */
+}
+
+
+/* hh */
+
+nav {
+
+  box-shadow: 0px 5px 0px #dedede;
+}
+
+nav .navmenu,
+nav .navmenu:after,
+nav .navmenu:before {
+  transition: all .5s;
+}
+nav .navmenu:hover {
+  color: #555;
+}
+/* jj */
+ nav .navmenu:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: #F1C40F;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+.navmenu:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
+@-webkit-keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: #333;
+  }
+}
+
+
+ footer {
+  padding-top: 20px;
+  background-color: rgb(245,92,126);
+  font-size: 16px;
+  padding: 10px;
+}
+
+.navmenu1 {
+  color: white;
+  padding:10px;
+  display: block;
+  text-decoration: none;
+
+}
+
+.footnav {
+  display: inline-block;
+}
+.footnav1 {
+  display: inline-block;
+  padding-left: 230px;
+}
+.footnav2 {
+  display: inline-block;
+  padding-left: 230px;
+  vertical-align: top;
+}

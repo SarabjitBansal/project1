@@ -1,0 +1,21 @@
+<h1>All Recipes</h1>
+<div class = "alignc">
+  <% @recipes.each do |recipe| %>
+    <% if recipe.image.present? %>
+
+    <!-- <div class = "thumb">
+      <%= link_to cl_image_tag(recipe.id),recipe %>
+
+    </div> -->
+    <!-- {:overlay=>"black_bar", :gravity=>"north", :width=>1.0, :height=>0.12, :flags=>"relative", :opacity=>60}, -->
+
+    <% recipename = recipe.name.delete(' ') %>
+    <%=  link_to cl_image_tag(recipe.id, :transformation=>[
+      {:height => 350, :crop=>"scale"},
+      {:overlay=>"black_bar",:gravity=>"north", :opacity=>60 , :flags=>"relative", :width=>1, :height=>0.2,:crop=>"scale"},
+      {:overlay => "text:Quicksand_30_bold:#{recipe.name}",:color=>"white",:gravity => :north_west, :x => 20, :y => 20,:width =>500, :crop => "fit", :flags=>"relative"}]) ,recipe  %>
+      <!-- {:overlay => "text:Quicksand_30_bold:#{recipe.name}",:color=>"white",:gravity => :north_west, :x => 50, :y => 50, :crop => "fit"}]) ,recipe  %> -->
+
+    <% end %>
+  <% end %>
+</div>

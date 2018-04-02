@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project1</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+    <div class = "container">
+      <header>
+        <div class ="headtag">
+          <% if @current_user.present? %>
+            <%= link_to "Sign Out #{ @current_user.email}", login_path, :method =>'delete'%>
+          <% else  %>
+            <%= link_to 'Sign Up', new_user_path %>
+            <%= link_to 'Sign In', login_path %>
+          <% end %>
+
+        </div>
+        <%=  link_to cl_image_tag("homepage_icon") %>
+        <!-- <div class = "logo">
+
+        </div> -->
+        <!-- <%=  image_tag ("https://cdn.dribbble.com/users/80372/screenshots/371321/anton.png")%> -->
+
+      </header>
+
+      <nav>
+
+        <%= link_to 'HOME', root_path ,class:'navmenu'%>
+        <%= link_to 'RECIPES', recipes_path,class:'navmenu' %>
+        <%= link_to 'SPECIALITY MENU', recipes_path,class:'navmenu' %>
+        <%= link_to 'RECIPE TYPE', recipes_path,class:'navmenu' %>
+        <%= link_to 'CONTACT US', root_path ,class:'navmenu'%>
+
+      </nav>
+
+      <%= yield %>
+
+      <footer>
+        <div class = "footnav">
+          <%= link_to 'Home', root_path ,class:'navmenu1'%>
+          <%= link_to 'Contact us', root_path ,class:'navmenu1'%>
+          <%= link_to 'Recipes', recipes_path,class:'navmenu1' %>
+        </div>
+        <div class = "footnav1">
+          <%= link_to 'New Recipe', root_path ,class:'navmenu1'%>
+          <%= link_to 'New Foodtype', root_path ,class:'navmenu1'%>
+          <%= link_to 'All Food Types', recipes_path,class:'navmenu1' %>
+        </div>
+        <div class = "footnav2">
+          <%= link_to 'My Profile', root_path ,class:'navmenu1'%>
+          <%= link_to 'My Favourites', root_path ,class:'navmenu1'%>
+
+        </div>
+      </footer>
+
+    </div>
+  </body>
+</html>
