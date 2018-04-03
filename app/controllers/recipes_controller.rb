@@ -10,10 +10,13 @@ class RecipesController < ApplicationController
   def create
     recipe = Recipe.create recipe_params
 
-    redirect_to recipe
-    recipename = recipe.name.delete(' ')
-    Cloudinary::Uploader.text(recipe.name,:public_id => recipename,:font_family => "Arial", :font_size => 18,:font_color => 'black', :opacity => 90)
+    recipe.foodtype_ids = params[:recipe][:foodtype_ids]
+    recipe.save
     Cloudinary::Uploader.upload(recipe.image,:public_id => recipe.id)
+    redirect_to recipe
+    # recipename = recipe.name.delete(' ')
+    # Cloudinary::Uploader.text(recipe.name,:public_id => recipename,:font_family => "Arial", :font_size => 18,:font_color => 'black', :opacity => 90)
+
 
 
   end
@@ -25,8 +28,14 @@ class RecipesController < ApplicationController
   def update
     recipe = Recipe.find params[:id]
     recipe.update recipe_params
-    recipename = recipe.name.delete(' ')
-    Cloudinary::Uploader.text(recipe.name,:public_id => recipename,:font_family => "Arial", :font_size => 18,:font_color => 'black', :opacity => 90)
+    # raise:hell
+    # kk
+    recipe.foodtypes.destroy
+    recipe.foodtype_ids = params[:recipe][:foodtype_ids]
+    recipe.save
+
+    # recipename = recipe.name.delete(' ')
+    # Cloudinary::Uploader.text(recipe.name,:public_id => recipename,:font_family => "Arial", :font_size => 18,:font_color => 'black', :opacity => 90)
     Cloudinary::Uploader.upload(recipe.image,:public_id => recipe.id)
 
     redirect_to recipe
@@ -44,4 +53,5 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(:name, :food_desc, :image, :prep_time,:cook_time, :no_of_serves, :spice_level, :recipe_type, :foodtype_id, :ingredients, :procedure, :country, :city)
   end
+
 end

@@ -13,10 +13,24 @@
     <%= f.text_field :no_of_serves, class:"noofserves" , :placeholder => '2 Serves' %>
   </div>
   <div class="foodty">
+    <!-- rectyp = ['Starter', 'Mains', 'Dessert', 'Drinks'] -->
     <%= f.label :recipe_type %>
     <%= f.text_field :recipe_type %>
-    <%= f.label :foodtype_id %>
-    <%= f.select :foodtype_id, Foodtype.pluck(:title, :id), :include_blank => true %>
+
+    <!-- <%= f.label :foodtype_id %>
+    <%= f.select :foodtype_id, Foodtype.pluck(:title, :id), :include_blank => true %> -->
+
+    <div class="field">
+      <%= f.label "Food Type:" %><br />
+      <%= f.collection_check_boxes :foodtype_ids, Foodtype.all, :id, :title do |b| %>
+        <div class="collection-check-box">
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+      <% end %>
+    </div>
+
+
   </div>
 
   <%= f.label :ingredients %>
@@ -24,7 +38,7 @@
   <%= f.label :procedure %>
   <%= f.text_area :procedure ,class: "procedure" , :placeholder => 'Blend the acai powder, frozen berries, milk, spinach leaves and honey together' %>
   <%= f.label :image %>
-  <%= f.url_field :image %>
+  <%= f.url_field :image, :required => true %>
 
   <div class = "origin">
     <%= f.label :country %>
