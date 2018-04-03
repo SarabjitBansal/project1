@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
 
   def create
     recipe = Recipe.create recipe_params
+    recipe.user_id = @current_user.id
 
     recipe.foodtype_ids = params[:recipe][:foodtype_ids]
     recipe.save
@@ -28,8 +29,9 @@ class RecipesController < ApplicationController
   def update
     recipe = Recipe.find params[:id]
     recipe.update recipe_params
+    recipe.user_id = @current_user.id
     # raise:hell
-    # kk
+
     recipe.foodtypes.destroy
     recipe.foodtype_ids = params[:recipe][:foodtype_ids]
     recipe.save
@@ -51,7 +53,7 @@ class RecipesController < ApplicationController
   end
   private
   def recipe_params
-    params.require(:recipe).permit(:name, :food_desc, :image, :prep_time,:cook_time, :no_of_serves, :spice_level, :recipe_type, :foodtype_id, :ingredients, :procedure, :country, :city)
+    params.require(:recipe).permit(:name, :food_desc, :image, :prep_time,:cook_time, :no_of_serves, :spice_level, :recipe_type, :foodtype_id, :ingredients, :procedure, :country, :city )
   end
 
 end
