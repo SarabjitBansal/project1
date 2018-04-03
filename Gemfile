@@ -35,7 +35,7 @@ gem 'jquery-rails' #also add this to application.js
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'font-awesome-rails'
-
+gem 'rails_12factor', :group => :production
 
 group :development, :test do
   gem 'pry-rails'
