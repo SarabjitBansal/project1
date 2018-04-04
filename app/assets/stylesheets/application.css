@@ -37,6 +37,7 @@ max-width: 100%;
   display: block;
   border: 2px solid black;
   padding: 2rem;
+  margin-bottom: 20px;
 
 }
 
@@ -45,7 +46,7 @@ label {
   padding:1rem 0 .5rem;
 
 }
-input, textarea, select {
+.alignn input, textarea, select {
     width:100%;
     height:1.5rem;
     padding: 5px;
@@ -55,6 +56,7 @@ input, textarea, select {
     font-family: 'Quicksand', sans-serif;
     font-size: 12px;
 }
+
 .fooddesc {
   width: 100%;
   height:5rem;
@@ -115,7 +117,7 @@ header img{
   /* display:inline-block; */
 }
 
-.btnsubmit{
+.alignn .btnsubmit{
 
   width: auto;
   font-weight: bold;
@@ -305,4 +307,33 @@ nav .navmenu:hover {
   position:relative;
   right: 0;
 
+}
+.formlog {
+  max-width: 700px;
+  margin: 0 auto;
+  display: block;
+  border: 2px solid black;
+  padding: 2rem;
+  margin-bottom: 20px;
+
+}
+.formlog1 input {
+  width:100%;
+  height:1.5rem;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 12px;
+}
+
+/* .formlog submit_tag {
+  width:auto;
+} */
+
+ .btnlogin {
+  width: 80px;
+  font-weight: bold;
+  text-align: center;
 }
