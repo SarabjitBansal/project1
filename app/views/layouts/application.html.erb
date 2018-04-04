@@ -13,13 +13,17 @@
     <div class = "container">
       <header>
         <div class ="headtag">
+
           <% if @current_user.present? %>
             <%= link_to "Sign Out #{ @current_user.email}", login_path, :method =>'delete'%>
           <% else  %>
             <%= link_to 'Sign Up', new_user_path %>
             <%= link_to 'Sign In', login_path %>
           <% end %>
-
+          <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+            <%= submit_tag "Search", :name => nil %>
+          <% end %>
         </div>
         <%=  link_to cl_image_tag("homepage_icon") %>
         <!-- <div class = "logo">

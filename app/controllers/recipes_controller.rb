@@ -1,6 +1,15 @@
 class RecipesController < ApplicationController
+
+
   def index
-    @recipes = Recipe.all.order(:created_at)
+
+    if params[:search]
+      @recipes = Recipe.search(params[:search]).order(:created_at)
+    else
+      @recipes = Recipe.all.order(:created_at)
+    end
+
+    # @recipes = Recipe.all.order(:created_at)
   end
 
   def new
@@ -89,6 +98,7 @@ class RecipesController < ApplicationController
         redirect_to @recipe
     end
   end
+
 
 
 
