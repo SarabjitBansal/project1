@@ -5,12 +5,12 @@
 
   <% if @recipe.image.present? %>
     <%=  link_to cl_image_tag(@recipe.id, :transformation=>[
-      {:height => 600, :crop=>"scale"},
+      {:height => 700, :crop=>"scale"},
       {:overlay=>"black_bar",:gravity=>"north", :opacity=>60 , :flags=>"relative", :width=>1, :height=>0.2,:crop=>"scale"},
       {:overlay => "text:Quicksand_30px_bold:#{@recipe.name}",:color=>"white",:gravity => :north_west, :x => 20, :y => 20,:width =>500, :crop => "fit", :flags=>"relative"}
-
-
       ]) ,@recipe.image  %>
+
+
   <% end %>
 
 
@@ -29,11 +29,11 @@
 
           <% if @current_user %>
             <% if @favorited %>
-            <%= button_to "Unfavorite ♥", favorite_recipe_path(@recipe , type: "unfavorite"), method: :put,   :class=> "favbutton" %>
+            <%= button_to "Unfavourite ☹", favorite_recipe_path(@recipe , type: "unfavorite"), method: :put,   :class=> "favbutton" %>
 
               <!-- <%= button_to "unfavorite", favorite_recipe_path(@recipe , type: "unfavorite"), method: :put %> -->
             <% else %>
-            <%= button_to "Add to favorite ♥", favorite_recipe_path(@recipe, type: "favorite"), method: :put  , :class=> "unfavbutton"%>
+            <%= button_to "Add to favourite ♥", favorite_recipe_path(@recipe, type: "favorite"), method: :put  , :class=> "unfavbutton"%>
               <!-- <%= button_to "favorite", favorite_recipe_path(@recipe, type: "favorite"), method: :put %> -->
             <% end %>
           <% end %>

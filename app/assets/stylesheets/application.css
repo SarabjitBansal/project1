@@ -20,7 +20,7 @@
 }
 
 .thumb {
-  padding:50px;
+  max-height: 30em;
 
 }
 
@@ -159,7 +159,7 @@ display: inline-block;
 .tooltip  {
   border: 1px solid green;
   border-radius: 4px;
-  background-color: green;
+  background-color: #96BE7B;
   display: inline-block;
   color: white;
   padding: 5px;
@@ -290,12 +290,14 @@ nav .navmenu:hover {
 .favbutton {
   width:auto;
   height:35px;
-  background-color: grey;
+  background-color: #F4698A;
+  color: white;
 }
 .unfavbutton {
   width:auto;
   height:35px;
-  background-color: red;
+  background-color: #F4698A;
+  color: white;
 }
 
 .fav {

@@ -2,7 +2,11 @@
 
 <% @foodtypes.each do |foodtype| %>
 <ul>
-  <li><%= link_to foodtype.shortname,  "/recipes/types_index/#{foodtype.shortname}" %> - <%= foodtype.title  %></li>
+  <!-- <li><%= link_to foodtype.shortname,  "/recipes/types_index/#{foodtype.shortname}" %> - <%= foodtype.title  %></li> -->
+  <li>
+    <%= link_to foodtype.shortname,foodtype %> - <%= foodtype.title  %>
+  </li>
+
 </ul>
 
 

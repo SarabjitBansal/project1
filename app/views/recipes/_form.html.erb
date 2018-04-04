@@ -1,5 +1,6 @@
 <div class ="alignn">
-  <%= form_for @recipe do |f|  %>
+
+  <%= form_for(@recipe, :html => { :multipart => true }) do |f| %>
   <%= f.label :'Recipe Name' %>
   <%= f.text_field :name, :placeholder => 'Acai Bowl Recipe', class: "foodname" %>
   <%= f.label :"Recipe Description"  %>
@@ -37,8 +38,12 @@
   <%= f.text_area :ingredients,class: "ingredients" , :placeholder => '4 tbs acai powder,1 cup frozen raspberries' %>
   <%= f.label :procedure %>
   <%= f.text_area :procedure ,class: "procedure" , :placeholder => 'Blend the acai powder, frozen berries, milk, spinach leaves and honey together' %>
-  <%= f.label :image %>
-  <%= f.url_field :image, :required => true %>
+
+  <%= f.label :image %><br>
+  <%= f.file_field :image %>
+
+  <!-- <%= f.label :image %>
+  <%= f.url_field :image, :required => true %> -->
 
   <div class = "origin">
     <%= f.label :country %>

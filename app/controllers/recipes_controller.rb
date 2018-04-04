@@ -13,7 +13,12 @@ class RecipesController < ApplicationController
 
     recipe.foodtype_ids = params[:recipe][:foodtype_ids]
     recipe.save
-    Cloudinary::Uploader.upload(recipe.image,:public_id => recipe.id)
+    # Cloudinary::Uploader.upload(recipe.image,:public_id => recipe.id)
+    # Cloudinary::Uploader.upload(recipe.image,:public_id => recipe.id)
+    Cloudinary::Uploader.upload(params[:recipe][:image],:public_id => recipe.id)
+
+    # cloudinary = Cloudinary::Uploader.upload(params[:recipe][:image])
+    # recipe.image = cloudinary["url"]
     redirect_to recipe
     # recipename = recipe.name.delete(' ')
     # Cloudinary::Uploader.text(recipe.name,:public_id => recipename,:font_family => "Arial", :font_size => 18,:font_color => 'black', :opacity => 90)
@@ -31,16 +36,21 @@ class RecipesController < ApplicationController
     recipe.update recipe_params
     recipe.user_id = @current_user.id
     # raise:hell
-
     recipe.foodtypes.destroy
     recipe.foodtype_ids = params[:recipe][:foodtype_ids]
     recipe.save
+    # cloudinary = Cloudinary::Uploader.upload(params[:recipe][:image])
+    # Cloudinary::Uploader.upload(recipe.image,:public_id => recipe.id)
+    Cloudinary::Uploader.upload(params[:recipe][:image],:public_id => recipe.id)
+    # recipe.image = cloudinary["url"]
+
 
     # recipename = recipe.name.delete(' ')
     # Cloudinary::Uploader.text(recipe.name,:public_id => recipename,:font_family => "Arial", :font_size => 18,:font_color => 'black', :opacity => 90)
-    Cloudinary::Uploader.upload(recipe.image,:public_id => recipe.id)
+
 
     redirect_to recipe
+
   end
 
   def show
