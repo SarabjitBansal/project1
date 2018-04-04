@@ -51,6 +51,36 @@ class RecipesController < ApplicationController
     recipe.destroy
     redirect_to recipes_path
   end
+
+  def types_index
+    @foodtypes = Foodtype.all
+  end
+
+  def by_type
+    foodtype = Foodtype.find_by :shortname => params[:type]
+    @recipes = foodtype.recipes
+    render :index
+  end
+
+  def favorite
+    @recipe = Recipe.find(params[:id])
+    type = params[:type]
+    if type == "favorite"
+      @current_user.favorites << @recipe
+      redirect_to :back, notice: 'Added to favorites'
+
+    elsif type == "unfavorite"
+      @current_user.favorites.delete(@recipe)
+      redirect_to :back, notice: 'Removed from favorites'
+
+    else
+      # Type missing, nothing happens
+      redirect_to :back, notice: 'Nothing happened.'
+    end
+  end
+
+
+
   private
   def recipe_params
     params.require(:recipe).permit(:name, :food_desc, :image, :prep_time,:cook_time, :no_of_serves, :spice_level, :recipe_type, :foodtype_id, :ingredients, :procedure, :country, :city )

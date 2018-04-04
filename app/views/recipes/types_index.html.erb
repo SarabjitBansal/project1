@@ -1,0 +1,10 @@
+
+<h1>Recipe Types</h1>
+<% @foodtypes.each do |foodtype| %>
+<ul>
+  <li><%= link_to foodtype.shortname,  "/recipes/types_index/#{foodtype.shortname}" %> - <%= foodtype.title  %></li>
+  <!-- <li><%= link_to foodtype.title, foodtype %></li> -->
+  <!-- <%= link_to foodtype.shortname, "/recipes/types_index/#{ foodtype.shortname }" %> -->
+
+</ul>
+<% end %>
