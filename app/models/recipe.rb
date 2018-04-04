@@ -22,5 +22,5 @@
 
 class Recipe < ApplicationRecord
   has_and_belongs_to_many :foodtypes , :optional => true
-  has_many :favorited_by, :through => :favorite_recipes
+  has_many :favorite_recipes
 end

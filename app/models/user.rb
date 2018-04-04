@@ -13,5 +13,5 @@ class User < ApplicationRecord
   has_secure_password
   has_many :recipes
   validates :email, :presence => true, :uniqueness => true
-  has_many :favorites, :through => :favorite_recipes
+  has_many :favorite_recipes
 end

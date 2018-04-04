@@ -284,3 +284,23 @@ nav .navmenu:hover {
   padding-left: 230px;
   vertical-align: top;
 }
+.fooddisp {
+  position: relative;
+}
+.favbutton {
+  width:auto;
+  height:35px;
+  background-color: grey;
+}
+.unfavbutton {
+  width:auto;
+  height:35px;
+  background-color: red;
+}
+
+.fav {
+  display:inline-block;
+  position:relative;
+  right: 0;
+
+}

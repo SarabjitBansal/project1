@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get '/recipes/types_index' => 'recipes#types_index'
   get '/recipes/types_index/:type' => 'recipes#by_type'
-
+  get '/recipes/favoriterecipe' => 'recipes#favoriterecipe'
   root :to =>'pages#home'
   resources :users, :only => [:new, :create]
   get '/login' =>'session#new'  #sign in frm

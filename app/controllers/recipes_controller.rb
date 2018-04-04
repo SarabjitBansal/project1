@@ -45,6 +45,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find params[:id]
+    @favorited = FavoriteRecipe.find_by(user: @current_user, recipe: @recipe).present?
   end
   def destroy
     recipe = Recipe.find params[:id]
@@ -62,20 +63,20 @@ class RecipesController < ApplicationController
     render :index
   end
 
+  def favoriterecipe
+    @recipes =  @current_user.favorite_recipes.map(&:recipe) # Study this
+    render :index
+  end
+
   def favorite
     @recipe = Recipe.find(params[:id])
     type = params[:type]
     if type == "favorite"
-      @current_user.favorites << @recipe
-      redirect_to :back, notice: 'Added to favorites'
-
+      @current_user.favorite_recipes.create :recipe => @recipe
+      redirect_to @recipe
     elsif type == "unfavorite"
-      @current_user.favorites.delete(@recipe)
-      redirect_to :back, notice: 'Removed from favorites'
-
-    else
-      # Type missing, nothing happens
-      redirect_to :back, notice: 'Nothing happened.'
+      @current_user.favorite_recipes.find_by(:recipe => @recipe).destroy
+        redirect_to @recipe
     end
   end
 
