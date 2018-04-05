@@ -63,6 +63,12 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find params[:id]
+    if @recipe.nofviews.nil?
+      @recipe.update :nofviews => 1
+    else
+      @recipe.update :nofviews => 1 + @recipe.nofviews
+    end
+
     @favorited = FavoriteRecipe.find_by(user: @current_user, recipe: @recipe).present?
   end
   def destroy

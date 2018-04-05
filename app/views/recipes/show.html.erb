@@ -39,7 +39,9 @@
         </div>
       </div>
 
-
+      <div>
+        <%= social_share_button_tag(@recipe.name) %>
+      </div>
 
       <!-- </div>
 
@@ -96,9 +98,4 @@
     <%= link_to 'Delete Recipe', @recipe, :method => 'delete', :data =>{:confirm =>'Are you sure ?'}%>
 
   </div>
-  <% if @recipe.nofviews.nil? %>
-    <% @recipe.update :nofviews => 1  %>
-  <% else %>
-  <% end %>
-    <% @recipe.update :nofviews => 1 + @recipe.nofviews %>
 </div>
