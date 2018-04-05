@@ -2,7 +2,7 @@
 
   <%= form_for(@recipe, :html => { :multipart => true }) do |f| %>
   <%= f.label :'Recipe Name' %>
-  <%= f.text_field :name,pattern:"^[^,]*[^ ,][^,]*$",:maxlength=>"22", :placeholder => 'Acai Bowl Recipe', class: "foodname" %>
+  <%= f.text_field :name,pattern:"^[^,]*[^ ,][^,]*$",:maxlength=>"22", :placeholder => 'Acai Bowl Recipe', class: "foodname", autofocus:true %>
   <%= f.label :"Recipe Description"  %>
   <%= f.text_area :food_desc ,class: "fooddesc", :placeholder => 'Acai is one of the best known sources of antioxidants. Antioxidants are plant-based chemicals which are great for overall health and fighting free radicals within the body.' %>
   <div class = "alignn2">

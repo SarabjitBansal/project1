@@ -13,7 +13,7 @@
   <%= form_for @user do |f| %>
     <div class = "formlog">
         <%= f.label :email %>
-        <%= f.email_field :email %>
+        <%= f.email_field :email, autofocus:true %>
 
         <%= f.label :password %>
         <%= f.password_field :password %>
