@@ -26,4 +26,6 @@ class Recipe < ApplicationRecord
   def self.search(search)
     where("name ILIKE ? OR ingredients ILIKE ? OR procedure ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
   end
+
+  
 end

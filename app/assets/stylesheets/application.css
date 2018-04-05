@@ -347,6 +347,10 @@ nav .navmenu:hover {
   vertical-align: bottom;
 
 }
+.formfood  h1{
+  margin: 0 auto;
+  text-align: center;
+}
 .formlog {
   max-width: 700px;
   margin: 0 auto;
@@ -368,11 +372,11 @@ nav .navmenu:hover {
 }
 
 
- .btnlogin {
-  width: 80px;
+ .formlog .btnlogin {
+  width: auto;
   font-weight: bold;
-  text-align: center;
 }
+
 footer {
  padding-top: 20px;
  background-color: rgb(245,92,126);
@@ -406,4 +410,11 @@ footer {
   float:right;
 
 
+}
+.alignn input:invalid {
+  border: 2px dashed red;
+}
+
+.alignn input:valid {
+  /* border: 2px solid black; */
 }

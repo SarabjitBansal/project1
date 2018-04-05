@@ -98,9 +98,10 @@
         <li><%= procedure %>.</li>
         <% end %>
       </ol>
+  <% if @current_user.present? && @current_user.id == @recipe.user_id %>
+    <div class = "controls">
+      <%= link_to 'Edit Recipe', edit_recipe_path(@recipe)  %>
+      <%= link_to 'Delete Recipe', @recipe, :method => 'delete', :data =>{:confirm =>'Are you sure ?'}%>
 
-  <div class = "controls">
-    <%= link_to 'Edit Recipe', edit_recipe_path(@recipe)  %>
-    <%= link_to 'Delete Recipe', @recipe, :method => 'delete', :data =>{:confirm =>'Are you sure ?'}%>
-
-  </div>
+    </div>
+  <% end %>
