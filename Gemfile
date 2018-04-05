@@ -36,7 +36,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'font-awesome-rails'
 gem 'rails_12factor', :group => :production
-
+gem 'social-share-button'
 group :development, :test do
   gem 'pry-rails'
 

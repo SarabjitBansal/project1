@@ -20,32 +20,37 @@
             <%= link_to 'Sign Up', new_user_path %>
             <%= link_to 'Sign In', login_path %>
           <% end %>
-          <div class = "Searchform">
-            <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
-              <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-              <%= submit_tag "Search", :name => nil %>
-            <% end %>
-          </div>
-
+          <%=  link_to cl_image_tag("homepage_icon") %>
         </div>
-        <%=  link_to cl_image_tag("homepage_icon") %>
+
+
+
         <!-- <div class = "logo">
 
         </div> -->
         <!-- <%=  image_tag ("https://cdn.dribbble.com/users/80372/screenshots/371321/anton.png")%> -->
 
       </header>
+      <div class="nav">
+        <nav>
 
-      <nav>
-
-        <%= link_to 'HOME', root_path ,class:'navmenu'%>
-        <%= link_to 'RECIPES', recipes_path,class:'navmenu' %>
-        <%= link_to 'SPECIALITY MENU', recipes_types_index_path,class:'navmenu' %>
+          <%= link_to 'HOME', root_path ,class:'navmenu'%>
+          <%= link_to 'RECIPES', recipes_path,class:'navmenu' %>
+          <%= link_to 'SPECIALITY MENU', recipes_types_index_path,class:'navmenu' %>
           <%= link_to 'FAMOUS RECIPES', recipes_famousrecipe_path,class:'navmenu' %>
-        <%= link_to 'CONTACT US', root_path ,class:'navmenu'%>
+          <%= link_to 'CONTACT US', root_path ,class:'navmenu'%>
 
-      </nav>
+        </nav>
 
+      </div>
+
+      <div class = "Searchform">
+        <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Recipes", class:'searchtext' %>
+          <%= submit_tag "Search", :name => nil , :class => 'searchbtn' %>
+
+        <% end %>
+      </div>
       <%= yield %>
 
       <footer>

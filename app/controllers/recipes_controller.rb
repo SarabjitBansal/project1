@@ -32,9 +32,6 @@ class RecipesController < ApplicationController
     cloudinary = Cloudinary::Uploader.upload(params[:recipe][:image],:public_id => recipe.id)
     recipe.update :image => cloudinary["url"]
     redirect_to recipe
-
-
-
   end
 
   def edit
@@ -71,6 +68,7 @@ class RecipesController < ApplicationController
 
     @favorited = FavoriteRecipe.find_by(user: @current_user, recipe: @recipe).present?
   end
+
   def destroy
     recipe = Recipe.find params[:id]
     recipe.destroy

@@ -1,6 +1,7 @@
-@import "font-awesome.css";
-@import url('https://fonts.googleapis.com/css?family=Quicksand');
-
+/*
+ *= require_tree .
+ *= require_self
+ */
 
 .container {
   max-width: 960px;
@@ -38,7 +39,7 @@ max-width: 100%;
   display: block;
   border: 2px solid black;
   padding: 2rem;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 
 }
 
@@ -107,18 +108,22 @@ height:5rem;
 }
 header {
   display:inline;
+
 }
+
 header img{
   max-height: 10em;
   display:inline-block;
-
+  float:left;
 }
+
 
 .headtag {
-  text-align: right;
-
   /* display:inline-block; */
+  vertical-align: right;
+  text-align: right;
 }
+
 
 .alignn .btnsubmit{
 
@@ -189,7 +194,37 @@ nav {
   /* background-color: rgba(255, 232, 28, 0.8); */
   font-size: 22px;
   padding: 10px;
+  display: inline-block;
 }
+.Searchform {
+  font-size: 22px;
+  padding: 20px;
+
+}
+.searchtext{
+  width:86%;
+  height:1.5rem;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 12px;
+}
+.searchbtn {
+  padding-left: 10px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-color: #C4D56E;
+   /* #F1C40F; */
+  color:white;
+  padding:10px;
+  border-radius: 8px;
+
+
+}
+
 .navmenu {
   color: grey;
   padding:20px;
@@ -262,12 +297,7 @@ nav .navmenu:hover {
 }
 
 
- footer {
-  padding-top: 20px;
-  background-color: rgb(245,92,126);
-  font-size: 16px;
-  padding: 10px;
-}
+
 
 .navmenu1 {
   color: white;
@@ -308,7 +338,13 @@ nav .navmenu:hover {
 .fav {
   display:inline-block;
   position:relative;
-  right: 0;
+
+
+}
+.socialmedia {
+  display:inline-block;
+  position:relative;
+  vertical-align: bottom;
 
 }
 .formlog {
@@ -317,7 +353,7 @@ nav .navmenu:hover {
   display: block;
   border: 2px solid black;
   padding: 2rem;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 
 }
 .formlog input {
@@ -332,8 +368,16 @@ nav .navmenu:hover {
 }
 
 
- .formlog .btnlogin {
+ .btnlogin {
   width: 80px;
   font-weight: bold;
   text-align: center;
+}
+footer {
+ padding-top: 20px;
+ background-color: rgb(245,92,126);
+ font-size: 16px;
+ padding: 10px;
+ margin-top: 20px;
+
 }

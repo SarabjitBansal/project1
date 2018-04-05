@@ -2,10 +2,12 @@
 <%= form_for @foodtype do |f| %>
 <div class = "formlog">
   <div class = "formlog1">
-  <%= f.label :title %>
-  <%= f.text_field :title, :autofocus => true %>
+
   <%= f.label :shortname %>
   <%= f.text_field :shortname, :autofocus => true %>
+  
+  <%= f.label :title %>
+  <%= f.text_field :title, :autofocus => true %>
 </div>
 <label></label>
 <%= f.submit %>
