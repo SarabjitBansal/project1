@@ -17,10 +17,11 @@
 
 .alignc img {
     padding: 5px;
+
 }
 
 .thumb {
-  max-height: 30em;
+  max-height: 17em;
 
 }
 
@@ -110,10 +111,12 @@ header {
 header img{
   max-height: 10em;
   display:inline-block;
+
 }
 
 .headtag {
   text-align: right;
+
   /* display:inline-block; */
 }
 
@@ -317,7 +320,7 @@ nav .navmenu:hover {
   margin-bottom: 20px;
 
 }
-.formlog1 input {
+.formlog input {
   width:100%;
   height:1.5rem;
   padding: 5px;
@@ -328,11 +331,8 @@ nav .navmenu:hover {
   font-size: 12px;
 }
 
-/* .formlog submit_tag {
-  width:auto;
-} */
 
- .btnlogin {
+ .formlog .btnlogin {
   width: 80px;
   font-weight: bold;
   text-align: center;

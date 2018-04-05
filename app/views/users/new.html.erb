@@ -11,7 +11,6 @@
 
 <%= form_for @user do |f| %>
 <div class = "formlog">
-  <div class = "formlog1">
     <%= f.label :email %>
     <%= f.email_field :email %>
 
@@ -21,9 +20,8 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
     <label></label>
-  </div>
 
-<%= f.submit "Sign up!" %>
+<%= f.submit "Sign up!" , :class => "btnlogin" %>
   </div>
 
 <% end %>

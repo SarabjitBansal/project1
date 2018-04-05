@@ -20,10 +20,13 @@
             <%= link_to 'Sign Up', new_user_path %>
             <%= link_to 'Sign In', login_path %>
           <% end %>
-          <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-            <%= submit_tag "Search", :name => nil %>
-          <% end %>
+          <div class = "Searchform">
+            <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+              <%= submit_tag "Search", :name => nil %>
+            <% end %>
+          </div>
+
         </div>
         <%=  link_to cl_image_tag("homepage_icon") %>
         <!-- <div class = "logo">
@@ -37,8 +40,8 @@
 
         <%= link_to 'HOME', root_path ,class:'navmenu'%>
         <%= link_to 'RECIPES', recipes_path,class:'navmenu' %>
-        <%= link_to 'SPECIALITY MENU', recipes_path,class:'navmenu' %>
-        <%= link_to 'RECIPE TYPE', recipes_types_index_path,class:'navmenu' %>
+        <%= link_to 'SPECIALITY MENU', recipes_types_index_path,class:'navmenu' %>
+          <%= link_to 'FAMOUS RECIPES', recipes_famousrecipe_path,class:'navmenu' %>
         <%= link_to 'CONTACT US', root_path ,class:'navmenu'%>
 
       </nav>
@@ -57,9 +60,10 @@
           <%= link_to 'All Food Types', foodtypes_path,class:'navmenu1' %>
         </div>
         <div class = "footnav2">
+          <% if @current_user.present? %>
           <%= link_to 'My Profile', root_path ,class:'navmenu1'%>
           <%= link_to 'My Favourites', recipes_favoriterecipe_path ,class:'navmenu1'%>
-
+          <% end %>
         </div>
       </footer>
 

@@ -14,9 +14,12 @@
     <%= f.text_field :no_of_serves, class:"noofserves" , :placeholder => '2 Serves' %>
   </div>
   <div class="foodty">
-    <!-- rectyp = ['Starter', 'Mains', 'Dessert', 'Drinks'] -->
+
+    <!-- <%= f.label :recipe_type %>
+    <%= f.text_field :recipe_type %> -->
+
     <%= f.label :recipe_type %>
-    <%= f.text_field :recipe_type %>
+    <%= f.select :recipe_type, ['Starter', 'Mains', 'Dessert', 'Drinks'], :include_blank => true %>
 
     <!-- <%= f.label :foodtype_id %>
     <%= f.select :foodtype_id, Foodtype.pluck(:title, :id), :include_blank => true %> -->
@@ -40,6 +43,14 @@
   <%= f.text_area :procedure ,class: "procedure" , :placeholder => 'Blend the acai powder, frozen berries, milk, spinach leaves and honey together' %>
 
   <%= f.label :image %><br>
+  <% if @recipe.image.present? %>
+    <%=  cl_image_tag(@recipe.id, :class => 'thumb', :transformation=>[
+      {:height => 700, :crop=>"scale"},
+      {:overlay=>"black_bar",:gravity=>"north", :opacity=>60 , :flags=>"relative", :width=>1, :height=>0.2,:crop=>"scale"},
+      {:overlay => "text:Quicksand_30px_bold:#{@recipe.name}",:color=>"white",:gravity => :north_west, :x => 20, :y => 20,:width =>500, :crop => "fit", :flags=>"relative"}
+      ])  %>
+  <% end %>
+
   <%= f.file_field :image %>
 
   <!-- <%= f.label :image %>

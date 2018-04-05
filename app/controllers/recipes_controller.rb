@@ -12,6 +12,13 @@ class RecipesController < ApplicationController
     # @recipes = Recipe.all.order(:created_at)
   end
 
+  def famousrecipe
+    # @recipes = Recipe.all.order(:nofviews)
+    # @recipes = Recipe.all.where("nofviews is not null").order("nofviews desc")
+    @recipes = Recipe.all.where("nofviews is not null").order("nofviews desc").limit(3)
+    render :index
+  end
+
   def new
     @recipe = Recipe.new
   end
@@ -22,15 +29,9 @@ class RecipesController < ApplicationController
 
     recipe.foodtype_ids = params[:recipe][:foodtype_ids]
     recipe.save
-    # Cloudinary::Uploader.upload(recipe.image,:public_id => recipe.id)
-    # Cloudinary::Uploader.upload(recipe.image,:public_id => recipe.id)
-    Cloudinary::Uploader.upload(params[:recipe][:image],:public_id => recipe.id)
-
-    # cloudinary = Cloudinary::Uploader.upload(params[:recipe][:image])
-    # recipe.image = cloudinary["url"]
+    cloudinary = Cloudinary::Uploader.upload(params[:recipe][:image],:public_id => recipe.id)
+    recipe.update :image => cloudinary["url"]
     redirect_to recipe
-    # recipename = recipe.name.delete(' ')
-    # Cloudinary::Uploader.text(recipe.name,:public_id => recipename,:font_family => "Arial", :font_size => 18,:font_color => 'black', :opacity => 90)
 
 
 
@@ -48,14 +49,12 @@ class RecipesController < ApplicationController
     recipe.foodtypes.destroy
     recipe.foodtype_ids = params[:recipe][:foodtype_ids]
     recipe.save
-    # cloudinary = Cloudinary::Uploader.upload(params[:recipe][:image])
-    # Cloudinary::Uploader.upload(recipe.image,:public_id => recipe.id)
-    Cloudinary::Uploader.upload(params[:recipe][:image],:public_id => recipe.id)
-    # recipe.image = cloudinary["url"]
 
+    if params[:recipe][:image].present?
+      cloudinary = Cloudinary::Uploader.upload(params[:recipe][:image],:public_id => recipe.id)
+      recipe.update :image => cloudinary["url"]
+    end
 
-    # recipename = recipe.name.delete(' ')
-    # Cloudinary::Uploader.text(recipe.name,:public_id => recipename,:font_family => "Arial", :font_size => 18,:font_color => 'black', :opacity => 90)
 
 
     redirect_to recipe
