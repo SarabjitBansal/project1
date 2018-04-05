@@ -212,7 +212,7 @@ nav {
   font-size: 12px;
 }
 .searchbtn {
-  padding-left: 10px;
+  margin-left: 13px;
   text-align: center;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -227,7 +227,7 @@ nav {
 
 .navmenu {
   color: grey;
-  padding:20px;
+  padding:30px;
   text-decoration: none;
 }
 
@@ -378,6 +378,32 @@ footer {
  background-color: rgb(245,92,126);
  font-size: 16px;
  padding: 10px;
- margin-top: 20px;
+ margin-top: 40px;
+
+}
+.bannerimg {
+  width: 100%
+}
+.bannerimg1 {
+  width: 30em;
+
+}
+.homepagec{
+  display: inline-block;
+}
+
+
+.homepagec img   {
+  float:right;
+}
+
+.contactus {
+    display: inline-block;
+    width: 100%;
+}
+
+.contactus img {
+  float:right;
+
 
 }

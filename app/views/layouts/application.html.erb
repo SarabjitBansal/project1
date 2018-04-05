@@ -37,8 +37,8 @@
           <%= link_to 'HOME', root_path ,class:'navmenu'%>
           <%= link_to 'RECIPES', recipes_path,class:'navmenu' %>
           <%= link_to 'SPECIALITY MENU', recipes_types_index_path,class:'navmenu' %>
-          <%= link_to 'FAMOUS RECIPES', recipes_famousrecipe_path,class:'navmenu' %>
-          <%= link_to 'CONTACT US', root_path ,class:'navmenu'%>
+          <%= link_to 'TOP RECIPES', recipes_famousrecipe_path,class:'navmenu' %>
+          <%= link_to 'CONTACT US', contactus_path ,class:'navmenu'%>
 
         </nav>
 
@@ -47,7 +47,7 @@
       <div class = "Searchform">
         <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
           <%= text_field_tag :search, params[:search], placeholder: "Search Recipes", class:'searchtext' %>
-          <%= submit_tag "Search", :name => nil , :class => 'searchbtn' %>
+          <%= submit_tag "🔍 Search", :name => nil , :class => 'searchbtn' %>
 
         <% end %>
       </div>
@@ -56,7 +56,7 @@
       <footer>
         <div class = "footnav">
           <%= link_to 'Home', root_path ,class:'navmenu1'%>
-          <%= link_to 'Contact us', root_path ,class:'navmenu1'%>
+          <%= link_to 'Contact us', contactus_path ,class:'navmenu1'%>
           <%= link_to 'Recipes', recipes_path,class:'navmenu1' %>
         </div>
         <div class = "footnav1">
@@ -66,7 +66,7 @@
         </div>
         <div class = "footnav2">
           <% if @current_user.present? %>
-          <%= link_to 'My Profile', root_path ,class:'navmenu1'%>
+          <%= link_to 'My Profile', myprofile_path ,class:'navmenu1'%>
           <%= link_to 'My Favourites', recipes_favoriterecipe_path ,class:'navmenu1'%>
           <% end %>
         </div>

@@ -1,9 +1,29 @@
-<h1>Healthy food</h1>
-<% if @current_user.present? %>
- <!-- session[:user_id] -->
-  Welcome back <%= @current_user.email %>
-  <!-- User.find(session[:user_id]) -->
-<% end %>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque eius quae aut, voluptatibus, sint deleniti, perferendis ratione ullam, maxime quo possimus quisquam. Possimus illum quo sit aperiam totam a consequatur.</p>
+<div class="container">
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque eius quae aut, voluptatibus, sint deleniti, perferendis ratione ullam, maxime quo possimus quisquam. Possimus illum quo sit aperiam totam a consequatur.</p>
+  <!-- <% if @current_user.present? %>
+    Welcome back <%= @current_user.email %>
+  <% end %> -->
+
+    <%=  cl_image_tag("banner1", :class => "bannerimg" )%>
+
+
+
+  <p>We are living in an environment where being unhealthy has become normal. Over half of adults and more than one in five children in NSW are overweight or obese, increasing their risk of heart disease, cancer, stroke and type 2 diabetes later in life.</p>
+  <div class="homepagec">
+    <%=  cl_image_tag("banner2", :class => "bannerimg1" )%>
+    <p>
+      The good news? This website is the ideal place where you can find healthy recipes that will help in making changes to your lifestyle. You can also find vegetarian, vegan, gluten-free as well as lactose-free recipes. On becoming a member, you can not only view recipes but also add your own creations for the world to discover. Feel free to share these recipes with friends and family.
+    </p>
+
+
+
+  </div>
+
+
+  <p>
+    It's never too late to make a change for yourself or your family. Small changes to your lifestyle can make a big difference. We need to change normal. We need to make healthy normal.
+  </p>
+
+
+
+</div>
