@@ -9,6 +9,28 @@ This website is the ideal place where you can find healthy recipes that will hel
 Ruby on rails,
 css
 
+### Bits of code
+
+Learnt how mapping works:
+
+```
+@recipes =  @current_user.favorite_recipes.map(&:recipe)
+
+```
+
+Learnt how the search works:
+
+```
+def self.search(search)
+  where("name ILIKE ? OR ingredients ILIKE ? OR procedure ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+end
+```
+
+Learnt how to validate the uniqueness :
+
+```
+validates :recipe_id, :uniqueness => { :scope => :user_id }
+```
 
 
 ## Future releases:
